@@ -35,7 +35,7 @@
         </javaTypeResolver>
 
         <!-- targetProject:生成PO类的位置 -->
-        <javaModelGenerator targetPackage="com.dawei.study.cloud.entity"
+        <javaModelGenerator targetPackage="${pojo-package}"
                             targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
@@ -60,7 +60,7 @@
         和mapper.java在同一目录下
          -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.dawei.study.cloud.mapper"
+                             targetPackage="${mapper=package}"
                              targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
@@ -68,20 +68,17 @@
         <!-- 指定数据库表 -->
 
 
-        <table tableName="t_user_info" domainObjectName="UserInfo"/>
+        <!--<table tableName="t_user_info" domainObjectName="UserInfo"/>-->
 
-        <!-- <table tableName="t_jzup_lottery_activity" domainObjectName="LotteryActivity"/>
-         <table tableName="t_jzup_lottery_activity_rule" domainObjectName="ActivityRule"/>
-
-<table tableName="t_jzup_lottery_activity_prize" domainObjectName="ActivityPrize"/>
-        <table tableName="t_jzup_lottery_activity_drawn" domainObjectName="LotteryRecord"/>
-         <table tableName="t_jzup_lottery_prize_delivery" domainObjectName="PrizeDelivery"/>
-         <table tableName="t_jzup_lottery_user_extracount" domainObjectName="UserExtraLottory"/>
-             <table tableName="t_jzup_lottery_user_extracount" domainObjectName="ExtraCountRecord"/>
-        <table tableName="t_jzup_lottery_extracount_config" domainObjectName="UserExtraLottery"/>
-         <table tableName="t_jzup_lottery_extracount_config" domainObjectName="ExtraCountRecord"/>-->
-
-
+       <table tableName="t_lottery_activity" domainObjectName="LotteryActivity"/>
+        <table tableName="t_lottery_activity_prize" domainObjectName="ActivityPrize"/>
+        <table tableName="t_lottery_activity_drawn" domainObjectName="LotteryRecord"/>
+         <table tableName="t_lottery_prize_delivery" domainObjectName="PrizeDelivery"/>
+         <table tableName="t_lottery_extracount_config" domainObjectName="ExtraCountMark"/>
+       <table tableName="t_lottery_activity_log" domainObjectName="OperationRecord"/>
+        <table tableName="t_lottery_activity_rule" domainObjectName="ActivityRule"/>
+        <table tableName="t_lottery_user_extracount" domainObjectName="ExtraCountRecord"/>
+        <!--<table tableName="t_user_login_info" domainObjectName="UserLoginInfo" />-->
         <!-- <table schema="" tableName="sys_user"></table>
         <table schema="" tableName="sys_role"></table>
         <table schema="" tableName="sys_permission"></table>
